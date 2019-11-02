@@ -23,7 +23,7 @@
     <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
        <form class="form-inline" style="margin-top:10px;">
         <a class="navbar-brand" onclick="back()" style=" cursor: pointer">
-         <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
+         <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
         </a>
         <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
           <div class="input-group-prepend">

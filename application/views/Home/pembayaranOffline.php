@@ -35,12 +35,12 @@
       </div>
       <div class="row">
         <div class="col">
-          <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\gambar 1.png" alt="" style="margin-top:3%"></center>
+          <center><img src="<?php echo base_url() ;?>Asset/gambar 1.png" alt="" style="margin-top:3%"></center>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Apotek K-24, Jl. Karawitan No.60, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264.png" alt="" style="margin-top:3%; margin-bottom:3%""></center>
+          <center><img src="<?php echo base_url() ;?>Asset/Alamat.png" style="margin-top:3%; margin-bottom:3%"></center>
         </div>
       </div>
     </div>

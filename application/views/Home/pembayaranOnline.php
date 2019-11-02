@@ -38,17 +38,17 @@
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 15.png" alt="" style="width:250%;">
+            <img src="<?php echo base_url(); ?>Asset/group 15.png" alt="" style="width:250%;">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 16.png" alt="" style="width:250%; margin-top:5%; margin-bottom:5%;">
+            <img src="<?php echo base_url(); ?>Asset/group 16.png" alt="" style="width:250%; margin-top:5%; margin-bottom:5%;">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 17.png" alt="" style="width:250%; margin-bottom:5%;">
+            <img src="<?php echo base_url(); ?>Asset/group 17.png" alt="" style="width:250%; margin-bottom:5%;">
           </div>
         </div>
       </div>
@@ -60,12 +60,12 @@
         </div>
         <div class="row">
           <div class="col">
-            <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\gambar 1.png" alt="" style="margin-top:3%; width:200px; margin-top:5%;"></center>
+            <center><img src="<?php echo base_url(); ?>Asset/gambar 1.png" alt="" style="margin-top:3%; width:200px; margin-top:5%;"></center>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Apotek K-24, Jl. Karawitan No.60, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264.png" alt="" style="margin-top:15%; margin-bottom:3%; width:300px;"></center>
+            <center><img src="<?php echo base_url(); ?>Asset/Alamat.png" alt="" style="margin-top:15%; margin-bottom:3%; width:300px;"></center>
           </div>
         </div>
       </div>
