@@ -25,7 +25,7 @@
       background-color: white;
     }
 
-    .form {
+    #SearchBar{
       outline: none;
     }
   </style>
@@ -34,14 +34,15 @@
 <body>
   <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
     <div class="form-inline" action="">
-      <a class="navbar-brand" href="#">
-        <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
+      <a class="navbar-brand">
+        <img src "<?php echo base_url();?>Asset/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
       </a>
       <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
         <div class="input-group-prepend">
-          <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px; border:1px solid #13B1E2;
-            border-right:none; padding-top:5px; padding-bottom:5px;">
-          <input class="form" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; width:700px; padding-top:5px; padding-bottom:5px;">
+          <span class="input-group-text" style="background-color:white; border:1px solid #13B1E2; border-right:none">
+            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px;">
+          </span>
+          <input id="SearchBar" class="form-contol" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; width:650px;">
           <button class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
             margin-left:5px;"><span style="color:White;">Search</span></button>
         </div>

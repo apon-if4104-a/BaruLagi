@@ -43,7 +43,7 @@
 
 <body>
   <div class="container">
-  <?php if($this->session->flashdata('passwordsalah')): ?>
+   <?php if($this->session->flashdata('passwordsalah')): ?>
     <div role="alert" class="alert alert-success alert-dismissible fade show">
       <button aria-label="Close" data-dismiss="alert" class="close" type="button">
         <span aria-hidden="true" class="fa fa-times"></span>
@@ -86,8 +86,6 @@
         </div>
       <?php endforeach; ?>
     </div>
-
-
   </div>
 </body>
 

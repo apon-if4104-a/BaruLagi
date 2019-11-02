@@ -9,19 +9,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
+    <style media="screen">
+      #SearchBar{
+        outline: none;
+        max-width:700px;
+      }
+      input[type=text]{
+        width:650px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
-      <form class="form-inline">
+       <form class="form-inline" style="margin-top:10px;">
         <a class="navbar-brand" onclick="back()" style=" cursor: pointer">
          <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
         </a>
         <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
           <div class="input-group-prepend">
-            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px; border:1px solid #13B1E2;
-            border-right:none; padding-top:5px; padding-bottom:5px;">
-            <input class="form" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; width:700px; padding-top:5px; padding-bottom:5px;">
-            <button class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
+            <span class="input-group-text" style="background-color:white; border:1px solid #13B1E2; border-right:none">
+              <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px;">
+            </span>
+            <input id="SearchBar" class="form-contol" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; ">
+            <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
             margin-left:5px;"><span style="color:White;">Search</span></button>
           </div>
         </div>

@@ -41,30 +41,6 @@
 </head>
 <body>
   <div class="container">
-  <?php if($this->session->flashdata('passwordsalah')): ?>
-    <div role="alert" class="alert alert-success alert-dismissible fade show">
-      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
-        <span aria-hidden="true" class="fa fa-times"></span>
-      </button>
-      <p><?php echo $this->session->flashdata('passwordsalah')?></p>
-     </div>
-  <?php endif;?>
-  <?php if($this->session->flashdata('usernamesalah')):?>
-    <div role="alert" class="alert alert-success alert-dismissible fade show">
-      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
-        <span aria-hidden="true" class="fa fa-times"></span>
-      </button>
-      <p><?php echo $this->session->flashdata('usernamesalah')?></p>
-    </div>
-  <?php endif;?>
-  <?php if($this->session->flashdata('pwdgasama')):?>
-    <div role="alert" class="alert alert-success alert-dismissible fade show">
-      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
-        <span aria-hidden="true" class="fa fa-times"></span>
-      </button>
-      <p><?php echo $this->session->flashdata('pwdgasama')?></p>
-    </div>
-  <?php endif;?>
     <div class="row" style="margin-top:40px;">
       <div class="col">
           <a href="<?php echo base_url('index.php/Home/Input_Resep/') ?>">

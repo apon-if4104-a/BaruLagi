@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <title>Apon</title>
     <?php include 'headerUser.php';?>
     <style>
@@ -53,7 +54,16 @@
 
     function beliobat(){
       var jumlahobat = document.getElementById('JMLHobat').value;
-      window.location = "<?php echo base_url('index.php/Home/BeliObat/'.$obat['ID_Obat']);?>/"+jumlahobat;
+      if( jumlahobat <= 0 || jumlahobat == null){
+        Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Obat Tidak Boleh Kosong'        
+      })
+      }else{
+          window.location = "<?php echo base_url('index.php/Home/BeliObat/'.$obat['ID_Obat']);?>/"+jumlahobat;
+      }
+
     }
     </script>
   </body>

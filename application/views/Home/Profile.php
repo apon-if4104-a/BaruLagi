@@ -25,7 +25,7 @@
         <div class="col">
           <div class="row">
             <div class="col">
-              <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:7%; padding:60px 60px 60px; border-radius:50%;">AZ</button>
+              <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:3%; padding:60px 60px 60px; border-radius:50%;">AZ</button>
             </div>
           </div>
           <div class="row">

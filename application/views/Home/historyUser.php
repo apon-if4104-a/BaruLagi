@@ -34,8 +34,7 @@
             <th>Nama Obat</th>
             <th>Jumlah</th>
             <th>Total Harga</th>
-            <th>Metode Pembayaran</th>
-            <th>Status</th>
+            <th>Metode Pembayaran</th>            
           </tr>
         </thead>
         <tbody>
@@ -43,8 +42,7 @@
             <td>Example</td>
             <td>Example</td>
             <td>Example</td>
-            <td>Example</td>
-            <td><button data-toggle="modal" data-target="#Confir" type="button" name="button" class="btn btn-primary">Example</button></td>
+            <td>Example</td>            
           </tr>
         </tbody>
       </table>
