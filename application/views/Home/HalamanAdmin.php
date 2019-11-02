@@ -94,7 +94,7 @@
                   <div class="card" style="float:right; padding-bottom:90px; padding-left:10px;">
                     <div class="card-body">
                       <h5>Foto Obat</h5>
-                      <input id="alamat" type="file" name="FotoObatI" value="" style=" border:none; ">
+                      <input id="alamat" type="file" name="FotoObat" value="" style=" border:none; ">
                     </div>
                   </div>
                   <div class="row">

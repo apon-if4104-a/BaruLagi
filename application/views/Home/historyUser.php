@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
-    <?php include 'headerLogin.php';?>
     <style>
       th{
         style:border:1px solid #f35410 ;
@@ -22,7 +21,7 @@
   </head>
   <body>
     <br>
-    <button type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
+    <button onclick="profile()" type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
     <br>
     <center>
         <h1 class="Hello" style="margin-top:30px;">History <span style="color:#f35410">Transaksi</span></h1>
@@ -72,5 +71,10 @@
         </div>
       </div>
     </div>
+    <script>
+      function back(){
+        window.location = "<?php echo base_url('index.php/user/profile');?>";
+      }
+    </script>
   </body>
 </html>

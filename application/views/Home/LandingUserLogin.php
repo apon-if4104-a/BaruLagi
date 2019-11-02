@@ -89,7 +89,7 @@
                     echo '<img src="data:image/png;base64,'.base64_encode($P['Foto_Obat']).'" alt="Icon"/>';
                   ?>
                 </div>
-                <div class="card-body" style="border:none"><b><?php echo $P['Foto_Obat'] ?></b></div>
+                <div class="card-body" style="border:none"><b><?php echo $P['Nama_Obat'] ?></b></div>
                 <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
                 <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
               </div>

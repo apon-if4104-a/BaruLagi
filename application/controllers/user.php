@@ -29,9 +29,12 @@ class user extends CI_Controller
 		$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
 		$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');*/
     }
-
     public function profile(){
       $this->load->view('Home/headerUser');
       $this->load->view('Home/Profile');
+    }
+    public function HistoriUser(){
+      $this->load->view('Home/headerUser');
+      $this->load->view('Home/historyUser');
     }
   }

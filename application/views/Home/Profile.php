@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Apon</title>    
+    <title>Apon</title>
     <style>
       .form-control{
         border:1px solid #13B1E2;
@@ -85,7 +85,7 @@
 
           <div class="row">
             <div class="col">
-              <button type="button" class="btn btn-outline-light text-dark" name="button" style="border:1px solid #F35410; background-color:#F35410; width:40%; margin-top:10px;"><span style="color:white">History Transaksi</span></button>
+              <button onclick="HistoriUser()" type="button" class="btn btn-outline-light text-dark" name="button" style="border:1px solid #F35410; background-color:#F35410; width:40%; margin-top:10px;"><span style="color:white">History Transaksi</span></button>
             </div>
           </div>
         </div>
@@ -112,5 +112,10 @@
         </div>
       </div>
     </div>
+    <script>
+      function HistoriUser(){
+        window.location = "<?php echo base_url('index.php/user/HistoriUser');?>";
+      }
+    </script>
   </body>
 </html>
