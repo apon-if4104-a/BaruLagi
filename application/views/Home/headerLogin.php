@@ -9,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <title>Apon</title>
 
   <style type="text/css">
@@ -80,6 +82,17 @@
                   </div>
                 </div>
                 <a href="#"><span style="color:#F35410; float:right; margin-top:10px;">Lupa Password</span></a>
+                <br> <br>
+                <div id="app">
+                  <div class="alert alert-danger alert-dismissible" v-if="UserError">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                  </div>
+                  <div class="alert alert-danger alert-dismissible" v-if="PassError">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                  </div>
+                </div>
               </div>
               <div class="modal-footer" style="border:none">
                 <button type="submit" class="btn" style="background-color:#F35410"><span style="color:white">Login</span></button>
@@ -116,7 +129,7 @@
                 <div class="formgroup">
                   <label for="Nama" style="float:left; margin-left:10px;">Username</label>
                   <br>
-                  <input id="Nama" type="text" class="form" name="usernameuser" placeholder="Masukan Nama anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input id="Nama" type="text" class="form" name="usernameuser" placeholder="Masukan Username anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
               <br>
@@ -164,6 +177,25 @@
 
     </div>
   </nav>
+  <script>
+  var app4 = new Vue({
+    el: '#app',
+    data: {
+      UserError : false,
+      PassError : false
+    }//,
+    // methods:{
+    //   loginChecker(){
+    //     axios.get(<?php echo base_url(); ?>index.php/TampilanAwal/loginChecker).then(function(response){
+    //       if(response.data.error == "Username Salah"){
+    //         UserError = true;
+    //       } else if(response.data.error == "Passwrod Salah"){
+    //         PassError = true;
+    //       }
+    //     });
+    // }
+  })
+  </script>
 
 </body>
 

@@ -42,6 +42,17 @@ class User_Model extends CI_Model
       ];
 
       $this->db->insert('transaksi',$transaction);
+
+      $stock = $this->db->select('stock')
+                        ->get_where('obat',array('ID_Obat' => $idobat))
+                        ->row()
+                        ->stock;
+      $data = [
+        "stock" => $stock-$jumlah
+      ];
+
+      $this->db->where('ID_Obat',$idobat);
+      $this->db->update('obat',$data);
     }
 
     public function transaksiOnline($username,$idobat,$jumlah,$total){
@@ -55,6 +66,17 @@ class User_Model extends CI_Model
       ];
 
       $this->db->insert('transaksi',$transaction);
+
+      $stock = $this->db->select('stock')
+                        ->get_where('obat',array('ID_Obat' => $idobat))
+                        ->row()
+                        ->stock;
+      $data = [
+        "stock" => $stock-$jumlah
+      ];
+
+      $this->db->where('ID_Obat',$idobat);
+      $this->db->update('obat',$data);
     }
 
   }

@@ -19,6 +19,7 @@
   </head>
   <body>
     <h4 style="margin-left:6%; margin-top:2%;">Pembayaran <span style="color:#F35410">Transfer</span></h4>
+    <h6 style="margin-left:6%; margin-top:2%; font-size:15px">* Bukti Pembayaran di atm harap dibawa untuk tanda bukti</h6>
     <div class="container" style="border:1px solid #F35410; margin-top:3%; border-radius:3px; margin-bottom:3%;">
       <div class="row" style="background-color:#F35410; padding-top:5px;">
         <div class="col-sm-8">

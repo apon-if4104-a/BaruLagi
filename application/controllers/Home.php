@@ -48,55 +48,88 @@ class Home extends CI_Controller
 	}
 	public function PilihObat($Id)
 	{
-		$table = 'obat';
-		$this->load->model('Obat_Home');
-		$hasil['obat'] = $this->Obat_Home->Get_Detail($Id);
-		$this->load->view('Home/Pilih Obat Login', $hasil);
+		if ($this->session->userdata('status')== true) {
+			$table = 'obat';
+			$this->load->model('Obat_Home');
+			$hasil['obat'] = $this->Obat_Home->Get_Detail($Id);
+			$this->load->view('Home/Pilih Obat Login', $hasil);
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
+
 
 	}
 	public function BeliObat($Id,$jumlah)
 	{
-		$result['tes'] = $Id;
-		$this->load->model('Obat_Home');
-		$result['jumlah'] = $jumlah;
-		$result['medic'] = $this->Obat_Home->Get_Detail($Id);
-		$result['username'] = $this->session->userdata('nama');
-		$this->load->view('Home/Pembayaran', $result);
+		if ($this->session->userdata('status')== true) {
+			$result['tes'] = $Id;
+			$this->load->model('Obat_Home');
+			$result['jumlah'] = $jumlah;
+			$result['medic'] = $this->Obat_Home->Get_Detail($Id);
+			$result['username'] = $this->session->userdata('nama');
+			$this->load->view('Home/Pembayaran', $result);
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
 	}
 
 	public function bayarOffline($idobat,$total,$jumlah)
 	{
-		$this->load->model('User_Model');
-		$username = $this->session->userdata('nama');
-		$this->User_Model->transaksiOffline($username,$idobat,$jumlah,$total);
-		$result['total'] = $total;
-		$this->load->view('Home/pembayaranOffline',$result);
+		if ($this->session->userdata('status')== true) {
+			$this->load->model('User_Model');
+			$username = $this->session->userdata('nama');
+			$this->User_Model->transaksiOffline($username,$idobat,$jumlah,$total);
+			$result['total'] = $total;
+			$this->load->view('Home/pembayaranOffline',$result);
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
 	}
 
 	public function bayarOnline($idobat,$total,$jumlah)
 	{
-		$this->load->model('User_Model');
-		$username = $this->session->userdata('nama');
-		$this->User_Model->transaksiOnline($username,$idobat,$jumlah,$total);
-		$result['total'] = $total;
-		$this->load->view('Home/pembayaranOnline',$result);
+		if ($this->session->userdata('status')== true) {
+			$this->load->model('User_Model');
+			$username = $this->session->userdata('nama');
+			$this->User_Model->transaksiOnline($username,$idobat,$jumlah,$total);
+			$result['total'] = $total;
+			$this->load->view('Home/pembayaranOnline',$result);
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
 	}
 
 	public function InputObat()
 	{
 			//Input
-			$this->form_validation->set_rules('IDObatI', 'ID Obat', 'integer');
-			$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
-			$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');
-			if ($this->form_validation->run() == false) {
-				$this->session->set_flashdata('gagal', 'Ditambahkan');
-				$this->load->view('Home/HalamanAdmin');
-			} else {
-				$this->load->model('Obat_Model');
-				$this->Obat_Model->Input_Obat();
-				$this->session->set_flashdata('berhasil', 'Ditambahkan');
-				$this->load->view('Home/HalamanAdmin');
+			if ($this->session->userdata('status')== true) {
+				$this->form_validation->set_rules('IDObatI', 'ID Obat', 'integer');
+				$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
+				$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');
+				$this->form_validation->set_rules('StokObatInpt','Stock Obat Input', 'integer');
+				$this->form_validation->set_rules('FotoObat','Foto Obat','required');
+				if ($this->form_validation->run() == false) {
+					$this->session->set_flashdata('gagal', 'Ditambahkan');
+					$this->load->view('Home/HalamanAdmin');
+				} else {
+
+					$id = $this->input->post('IDObatI');
+					$this->load->model('Obat_Model');
+					$upload = $this->Obat_Model->uploadObat();
+					if($upload['result'] == "success"){
+						$this->Obat_Model->save($upload,$id);
+					}else{
+						$data['message'] = $upload['error'];
+					}
+
+					$this->Obat_Model->Input_Obat();
+					$this->session->set_flashdata('berhasil', 'Ditambahkan');
+					$this->load->view('Home/HalamanAdmin');
+				}
+			}else{
+				redirect(base_url('index.php/Home'));
 			}
+
 	}
 
 	public function DeleteObat()
@@ -122,14 +155,64 @@ class Home extends CI_Controller
 		$this->load->view('Home/HalamanAdmin');
 	}
 	public function adminlanding(){
-		$this->load->view('Home/headerLogin');
-		$this->load->view('Home/LandingUser');
+		if ($this->session->userdata('status')== true) {
+			$this->load->view('Home/headerLogin');
+			$this->load->view('Home/LandingUser');
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
+
 	}
 	public function historitrans(){
-		$this->load->view('Home/headerAdmin');
-		$this->load->view('Home/historyAdmin');
+		if ($this->session->userdata('status')== true) {
+			$this->load->view('Home/headerAdmin');
+			$this->load->view('Home/historyAdmin');
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
+
 	}
 	public function homeadmin(){
 		$this->load->view('Home/HalamanAdmin');
 	}
+	public function EditProfile()
+	{
+		//Update
+		if ($this->session->userdata('status')== true) {
+			$this->load->model('User_Update');
+			$this->form_validation->set_rules('EmailU', 'Email', 'email');
+			$this->form_validation->set_rules('HPU', 'NO HP', 'integer');
+
+			$editp = $this->input->post('UsernameU');
+			$this->User_Update->Update_User($editp);
+			$this->load->view('Home/headerUser');
+			$this->load->view('Home/Profile');
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
+
+	}
+	public function EditPass()
+	{
+		if ($this->session->userdata('status')== true) {
+			$pwd1 = $this->input->post('PwdUBaru1');
+			$pwd2 = $this->input->post('PwdUBaru2');
+			//Update
+			$this->load->model('User_Update');
+			if($pwd1 == $pwd2){
+				$editp = $this->session->userdata('nama');
+				$this->User_Update->Update_Pass($editp);
+				$this->load->view('Home/headerUser');
+				$this->load->view('Home/Profile');
+	    }else{
+	      $this->session->set_flashdata('pwdgasama',"Password Tidak Sama");
+				$this->load->view('Home/headerUser');
+				$this->load->view('Home/Profile');
+	    }
+		}else{
+			redirect(base_url('index.php/Home'));
+		}
+
+	}
+
 }

@@ -141,6 +141,17 @@
                     </div>
                   </div>
                   <div class="row">
+                    <div class="col-sm-8">
+                      <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2; width:400px;">
+                        <div class="formgroup">
+                          <label for="StokUsinptr" style="float:left; margin-left:10px;">Stok Obat</label>
+                          <br>
+                          <input type="text" class="form" id="StokUsrinpt" name="StokObatInpt" placeholder="Stok Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-sm-6">
                       <div class="Pass" style=" border-left:10px solid #13B1E2; width:400px;">
                         <div class="formgroup">
@@ -264,6 +275,17 @@
                           <label for="ket" style="float:left; margin-left:10px;">Harga Obat</label>
                           <br>
                           <input type="text" class="form" id="ket" name="HargaObatU" placeholder="Masukan Harga Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2; width:400px;">
+                        <div class="formgroup">
+                          <label for="StokUpdt" style="float:left; margin-left:10px;">Stok Obat</label>
+                          <br>
+                          <input type="text" class="form" id="StokUpdt" name="StokObatUpdate" placeholder="Stok Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                         </div>
                       </div>
                     </div>

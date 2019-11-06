@@ -20,6 +20,14 @@
     </style>
   </head>
   <body>
+    <?php if($this->session->flashdata('pwdgasama')):?>
+      <div role="alert" class="alert alert-success alert-dismissible fade show">
+        <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+          <span aria-hidden="true" class="fa fa-times"></span>
+        </button>
+        <p><?php echo $this->session->flashdata('pwdgasama')?></p>
+      </div>
+    <?php endif;?>
     <div class="container" style="margin-top:5%;">
       <div class="row" style="margin-left:10%">
         <div class="col">
@@ -45,12 +53,13 @@
                 </div>
 
                 <!-- Modal body -->
+                <form action="<?php echo base_url(); ?>index.php/Home/EditPass" method="post">
                 <div class="modal-body">
                   <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2;">
                     <div class="formgroup">
                       <label for="pwd" style="float:left; margin-left:10px;">Password Lama</label>
                       <br>
-                      <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required
+                      <input type="password" class="form" id="pwd" name="PwdULama" placeholder="Masukan Password anda" required
                       style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                     </div>
                   </div>
@@ -59,7 +68,7 @@
                     <div class="formgroup">
                       <label for="pwd" style="float:left; margin-left:10px;">Password Baru</label>
                       <br>
-                      <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required
+                      <input type="password" class="form" id="pwd" name="PwdUBaru1" placeholder="Masukan Password anda" required
                       style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                     </div>
                   </div>
@@ -68,7 +77,7 @@
                     <div class="formgroup">
                       <label for="pwd" style="float:left; margin-left:10px;">Ketik Ulang Password</label>
                       <br>
-                      <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required
+                      <input type="password" class="form" id="pwd" name="PwdUBaru2" placeholder="Masukan Password anda" required
                       style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                     </div>
                   </div>
@@ -78,9 +87,9 @@
                 <div class="modal-footer" style="border:none">
                   <button type="submit" class="btn" style="background-color:#13B1E2"><span style="color:white">Ganti</span></button>
                 </div>
-
               </div>
             </div>
+          </form>
           </div>
 
           <div class="row">
@@ -90,22 +99,22 @@
           </div>
         </div>
         <div class="col" style="margin-left:-10%">
-          <form action="">
+          <form action="<?php echo base_url(); ?>index.php/Home/EditProfile" method="post">
             <div class="form-group">
               <label for="text">Nama:</label>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="NamaU" value="">
             </div>
             <div class="form-group">
               <label for="text">Username:</label>
-              <input type="text" class="form-control" name="" value="">
+              <input type="text" class="form-control" name="UsernameU" value="">
             </div>
             <div class="form-group">
               <label for="email">Email address:</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" name="EmailU" id="email">
             </div>
             <div class="form-group">
               <label for="text">Nomor HP:</label>
-              <input type="text" class="form-control" id="pwd">
+              <input type="text" class="form-control" name="HPU" id="pwd">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
