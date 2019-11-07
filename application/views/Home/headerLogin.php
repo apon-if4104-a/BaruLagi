@@ -29,29 +29,37 @@
 
     #SearchBar{
       outline: none;
+      border:1px solid #13B1E2;
+      border-left:none;
+      width:670px;
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
-    <div class="form-inline" action="">
-      <a class="navbar-brand">
-        <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
-      </a>
-      <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
-        <div class="input-group-prepend">
-          <span class="input-group-text" style="background-color:white; border:1px solid #13B1E2; border-right:none">
-            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px;">
-          </span>
-          <input id="SearchBar" class="form-contol" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; width:650px;">
-          <button class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
-            margin-left:5px;"><span style="color:White;">Search</span></button>
-        </div>
+  <div class="container">
+    <div class="row" >
+      <div class="col-sm-2">
+        <a style=" cursor: pointer">
+         <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; height:40px; margin-top:7px;">
+        </a>
       </div>
-
-      <button id="Btnlogin" data-toggle="modal" data-target="#Log-in" type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:15px; background-color:#F35410; margin-top:-15px;"><span style="color:White;">Log-In</span></button>
-
+      <div class="col-sm-6">
+        <center>
+          <div class="form-inline my-2 my-lg-0">
+            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;">
+            <input id="SearchBar" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;">
+            <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;"><span style="color:White;">Search</span></button>
+          </div>
+        </center>
+      </div>
+      <div class="col-sm-4">
+        <button id="Btnlogin" data-toggle="modal" data-target="#Log-in" type="button" name="button" class="btn btn-outline-light text-dark" style="float:right; border:1px solid #F35410; background-color:#F35410; margin-top:7px;"><span style="color:White;">Log-In</span></button>
+        <button id="btndaftar" data-toggle="modal" data-target="#Daftar" type="button" name="button" class="btn btn-outline-light text-dark" style="float:right; border:1px solid #F35410; margin-right:10%; margin-top:7px;"><span style="color:#F35410;">Daftar</span></button>
+      </div>
+    </div>
+  </div>
+  <hr style="background-color:#13B1E2">
       <!-- The Modal -->
       <form action="<?php echo base_url(); ?>index.php/TampilanAwal/login" method="post">
         <div class="modal" id="Log-in">
@@ -102,7 +110,6 @@
         </div>
       </form>
 
-      <button id="btndaftar" data-toggle="modal" data-target="#Daftar" type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410;  margin-top:-15px; margin-left:10px;"><span style="color:#F35410;">Daftar</span></button>
       <!-- The Modal DAFTAR-->
       <div class="modal" id="Daftar">
         <div class="modal-dialog">
@@ -174,9 +181,8 @@
         </form>
         </div>
       </div>
-
     </div>
-  </nav>
+
   <script>
   var app4 = new Vue({
     el: '#app',

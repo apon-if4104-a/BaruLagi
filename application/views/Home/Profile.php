@@ -33,7 +33,8 @@
         <div class="col">
           <div class="row">
             <div class="col">
-              <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:3%; padding:60px 60px 60px; border-radius:50%;">AZ</button>
+              <!-- <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:3%; padding:60px 60px 60px; border-radius:50%;">AZ</button> -->
+              <img src="https://www.gkipeterongan.org/wp-content/uploads/2019/01/user_circle_1048392.png" alt="" style="margin-top:7px; width:210px;">
             </div>
           </div>
           <div class="row">

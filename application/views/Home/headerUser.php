@@ -12,33 +12,37 @@
     <style media="screen">
       #SearchBar{
         outline: none;
-        max-width:700px;
       }
-      input[type=text]{
-        width:650px;
+      #SearchBar:focus{
+        border-bottom: 2px solid #13B1E2;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
-       <form class="form-inline" style="margin-top:10px;">
-        <a class="navbar-brand" onclick="back()" style=" cursor: pointer">
-         <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
-        </a>
-        <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
-          <div class="input-group-prepend">
-            <span class="input-group-text" style="background-color:white; border:1px solid #13B1E2; border-right:none">
-              <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px;">
-            </span>
-            <input id="SearchBar" class="form-contol" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; ">
-            <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
-            margin-left:5px;"><span style="color:White;">Search</span></button>
-          </div>
+    <div class="container">
+      <div class="row" >
+        <div class="col-sm-2">
+          <a onclick="back()" style=" cursor: pointer">
+           <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; height:40px; margin-top:7px;">
+          </a>
         </div>
-        <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:30px; background-color:#F35410; margin-top:-20px;"><span style="color:White;">Log Out</span></button>
-        <button onclick="profile()" id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:20px; padding:15px 20px 20px; border-radius:50%; background-color:grey;"></button>
-      </form>
-    </nav>
+        <div class="col-sm-8">
+          <center>
+            <div class="form-inline my-2 my-lg-0">
+              <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;">
+              <input id="SearchBar" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;">
+              <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;"><span style="color:White;">Search</span></button>
+            </div>
+          </center>
+        </div>
+        <div class="col-sm-2">
+          <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="margin-top:7px; float:right; border:1px solid #F35410; background-color:#F35410;"><span style="color:White;">Log Out</span></button>
+          <a onclick="profile()"><img src="https://www.gkipeterongan.org/wp-content/uploads/2019/01/user_circle_1048392.png" alt="" style="margin-top:7px; width:40px; cursor:pointer;"></a>          
+        </div>
+      </div>
+    </div>
+    <hr style="background-color:#13B1E2">
+
     <script>
       function logout(){
         window.location = "<?php echo base_url('index.php/TampilanAwal/logout');?>";
