@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="<?php echo site_url('Home/Input_Resep_Foto'); ?>" method="post">
+        <form action="<?php echo base_url('index.php/Home/Input_Resep_Foto'); ?>" method="post" enctype="multipart/form-data">
             <div class="card" style="margin-top:30px; padding-bottom:90px; border:1px solid #13B1E2;">
                 <div class="card-body">
                     <center>

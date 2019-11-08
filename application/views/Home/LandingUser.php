@@ -78,7 +78,11 @@
       <?php foreach ($BanyakObat as $P) : ?>
         <div class="box">
           <div class="card" style="width:105%; border:2px solid #13B1E2;">
-            <div class="card-header" style="background-color:white;border:none"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
+            <div class="card-header" style="background-color:white;border:none">
+              <?php 
+                echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/>';
+              ?>
+            </div>
             <div class="card-body" style="border:none"><b style="color:#13B1E2"><?php echo $P['Nama_Obat'] ?></b></div>
             <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
             <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>

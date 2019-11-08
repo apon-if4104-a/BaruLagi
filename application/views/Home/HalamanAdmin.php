@@ -49,7 +49,7 @@
 
           Toast.fire({
             type: 'success',
-            title: 'Signed in successfully'
+            title: 'Data Sudah Terupload'
           })
         </script>
       <?php endif; ?>
@@ -64,7 +64,7 @@
 
           Toast.fire({
             type: 'error',
-            title: 'Data unsuccessfully'
+            title: 'Data gagal terupload'
           })
         </script>
       <?php endif; ?>
@@ -76,7 +76,7 @@
     <div class="row">
       <div class="Input_obat col-md-3">
         <center><button id="Tombol" data-toggle="modal" data-target="#Input_obat" type="button" class="btn btn-light" style="padding-bottom:75px; background-color:white; border:1px solid #f35410;">Input <span style="color:#f35410">Obat</span></button></center>
-        <form action="<?php echo base_url(); ?>index.php/Home/InputObat" method="post">
+        <form action="<?php echo base_url(); ?>index.php/Home/InputObat" method="post" enctype="multipart/form-data">
           <!-- The Modal -->
           <div class="modal" id="Input_obat">
             <div class="modal-dialog">

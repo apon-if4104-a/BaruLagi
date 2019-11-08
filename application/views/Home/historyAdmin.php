@@ -32,20 +32,22 @@
         <thead>
           <tr>
             <th>Nama Users</th>
-            <th>Nama Obat</th>
+            <th>ID Obat</th>
             <th>Jumlah</th>
             <th>Metode Pembayaran</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
+        <?php foreach ($histori as $P) : ?>
           <tr>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td><button data-toggle="modal" data-target="#Confir" type="button" name="button" class="btn btn-primary">Example</button></td>
+            <td><?php echo $P['namaUser']?></td>
+            <td><?php echo $P['ID_Obat']?></td>
+            <td><?php echo $P['Jumlah']?></td>
+            <td><?php echo $P['Metode_Pembayaran']?></td>
+            <td><?php echo $P['Status']?></td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>

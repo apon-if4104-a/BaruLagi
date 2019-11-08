@@ -61,9 +61,9 @@
             <a id="KatalogObat" href="<?php echo base_url('index.php/Home/PilihObat/' . $P['ID_Obat']) ?>">
               <div class="card" style="width:105%; border:2px solid #13B1E2;">
                 <div class="card-header" style="background-color:white;border:none">
-                  <?php
-                    echo '<img src="data:image/png;base64,'.base64_encode($P['Foto_Obat']).'" alt="Icon"/>';
-                  ?>
+                <?php 
+                  echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/>';
+                ?>
                 </div>
                 <div class="card-body" style="border:none"><b><?php echo $P['Nama_Obat'] ?></b></div>
                 <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>

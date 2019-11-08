@@ -50,11 +50,16 @@ class user extends CI_Controller
     }
     public function HistoriUser(){
       if ($this->session->userdata('status')== true) {
+        $this->load->model('Obat_Home');
+        $username = $this->session->userdata('nama');
+        $hasil = $this->Obat_Home->getHistoryUser($username);
+        $data['histori'] = $hasil;
         $this->load->view('Home/headerUser');
-        $this->load->view('Home/historyUser');
+        $this->load->view('Home/historyUser',$data);
       }else{
         redirect(base_url('index.php/Home'));
       }
 
     }
   }
+

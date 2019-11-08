@@ -36,8 +36,12 @@ class Home extends CI_Controller
 	{
 		$this->load->library('form_validation');
 		$this->load->model('Obat_Resep');
-		$this->Obat_Resep->Input_Obat_Resep();
-		echo "berhasil";
+		$foto = $_FILES['FotoResep']['tmp_name'];
+		$foto = base64_encode(file_get_contents($foto));
+		$username = $this->session->userdata('nama');
+		$this->Obat_Resep->Input_Obat_Resep($foto,$username);
+		$this->load->view('Home/headerUser');
+		$this->load->view('Home/InputResep');
 		/*if ($this->form_validation->run() == false) {
 			$this->load->view('Home/InputResep');
 		} else {
@@ -107,22 +111,14 @@ class Home extends CI_Controller
 				$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
 				$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');
 				$this->form_validation->set_rules('StokObatInpt','Stock Obat Input', 'integer');
-				$this->form_validation->set_rules('FotoObat','Foto Obat','required');
 				if ($this->form_validation->run() == false) {
 					$this->session->set_flashdata('gagal', 'Ditambahkan');
 					$this->load->view('Home/HalamanAdmin');
 				} else {
-
-					$id = $this->input->post('IDObatI');
 					$this->load->model('Obat_Model');
-					$upload = $this->Obat_Model->uploadObat();
-					if($upload['result'] == "success"){
-						$this->Obat_Model->save($upload,$id);
-					}else{
-						$data['message'] = $upload['error'];
-					}
-
-					$this->Obat_Model->Input_Obat();
+					$foto = $_FILES['FotoObat']['tmp_name'];
+					$foto = base64_encode(file_get_contents($foto));
+					$this->Obat_Model->Input_Obat($foto);
 					$this->session->set_flashdata('berhasil', 'Ditambahkan');
 					$this->load->view('Home/HalamanAdmin');
 				}
@@ -165,8 +161,11 @@ class Home extends CI_Controller
 	}
 	public function historitrans(){
 		if ($this->session->userdata('status')== true) {
+			$this->load->model('Obat_Home');
+			$hasil = $this->Obat_Home->getHistoryAdmin();
+			$data['histori'] = $hasil;
 			$this->load->view('Home/headerAdmin');
-			$this->load->view('Home/historyAdmin');
+			$this->load->view('Home/historyAdmin',$data);
 		}else{
 			redirect(base_url('index.php/Home'));
 		}
