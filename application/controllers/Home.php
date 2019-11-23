@@ -213,5 +213,12 @@ class Home extends CI_Controller
 		}
 
 	}
+	public function search(){
+        $d = $this->Obat_Home->search();
+        $data["BanyakObat"] = $d;
+        $this->load->view('Home/headerUser');
+        $this->load->view('Home/LandingUserLogin', $data);
+
+	}
 
 }

@@ -33,9 +33,11 @@
     .box{
       margin : 5px;
       padding : 5px;
-      min-width : 300px;
+      min-width : 250px;
       position : relative;
-      float : left;
+      float:left;
+      max-width: 500px;
+      max-height: 500px;
     }
   </style>
 </head>
@@ -57,20 +59,22 @@
 
       <div class="container" style="margin-bottom:40px;">
         <?php foreach ($BanyakObat as $P) : ?>
+          <a id="KatalogObat" href="<?php echo base_url('index.php/Home/PilihObat/' . $P['ID_Obat']) ?>">
           <div class="box">
-            <a id="KatalogObat" href="<?php echo base_url('index.php/Home/PilihObat/' . $P['ID_Obat']) ?>">
-              <div class="card" style="width:105%; border:2px solid #13B1E2;">
-                <div class="card-header" style="background-color:white;border:none">
+            <div class="card" style="width:105%; border:2px solid #13B1E2;float:left">
+              <div class="card-header" style="background-color:white;border:none   width: 100px;
+      height: 100px;">
                 <?php 
-                  echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/>';
+                  echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"; style = "      max-width: 100px;
+      max-height: 100px;"/>';
                 ?>
-                </div>
-                <div class="card-body" style="border:none"><b><?php echo $P['Nama_Obat'] ?></b></div>
-                <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
-                <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
               </div>
-            </a>
+                <div class="card-body" style="border:none"><b style="color:#13B1E2"><?php echo $P['Nama_Obat'] ?></b></div>
+                <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
+            <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
+            </div>
           </div>
+        </a>
         <?php endforeach; ?>
       </div>
 

@@ -20,22 +20,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="row" >
-        <div class="col-sm-2">
+      <div class="row" style="text-align:center;position: relative;">
+        <div class="col-sm-2" style = "display:inline-block;float:none;min-width:100px;">
           <a onclick="back()" style=" cursor: pointer">
-           <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; height:40px; margin-top:7px;">
+           <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; height:40px; margin-top:7px;position: relative;">
           </a>
         </div>
-        <div class="col-sm-8">
-          <center>
-            <div class="form-inline my-2 my-lg-0">
-              <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;">
-              <input id="SearchBar" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;">
-              <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;"><span style="color:White;">Search</span></button>
-            </div>
-          </center>
+        <div class="col-sm-6" style = "display:inline-block;float:none;min-width:100px;min-height:10px;">
+            <form action="<?php echo base_url();?>index.php/Home/search" method = "post">
+              <div class="form-inline my-2 my-lg-0">
+                <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;position: relative;"/>
+                <input id="" name= "yangdicari" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;position: relative;"></input>
+                <input class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;position: relative;"><span style="color:White;">Search</span></input>
+              </div>
+            </form>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-2" style = "display:inline-block;float:none;min-width:100px;">
           <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="margin-top:7px; float:right; border:1px solid #F35410; background-color:#F35410;"><span style="color:White;">Log Out</span></button>
           <a onclick="profile()"><img src="https://www.gkipeterongan.org/wp-content/uploads/2019/01/user_circle_1048392.png" alt="" style="margin-top:7px; width:40px; cursor:pointer;"></a>          
         </div>

@@ -4,10 +4,11 @@ class Obat_Home extends CI_Model
 {
     public function Get_Keywoard($keywoard)
     {
-        $keywoard = $this->input->post('keywoard', true);
+        $this->db->from('obat');
         $this->db->like('Nama_Obat', $keywoard);
         $this->db->or_like('Keterangan_Obat', $keywoard);
-        return $this->db->get('apon')->result();
+        $query = $this->db->get();
+        return $query->result_array();
     }
     public function get_All($table){
         $this->db->select('*');
@@ -35,6 +36,14 @@ class Obat_Home extends CI_Model
         $this->db->select('obat.ID_Obat,Jumlah,Total_Harga,Metode_Pembayaran,Status');
         $this->db->from('transaksi');
         $this->db->join('obat','obat.ID_Obat = transaksi.ID_obat');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function search()
+    {
+        $this->db->select("*");
+        $this->db->from("obat");
+        $this->db->like("Nama_Obat", $this->input->post("yangdicari"));
         $query = $this->db->get();
         return $query->result_array();
     }
