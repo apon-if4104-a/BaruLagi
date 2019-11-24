@@ -46,11 +46,13 @@
       </div>
       <div class="col-sm-6">
         <center>
-          <div class="form-inline my-2 my-lg-0">
-            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;">
-            <input id="SearchBar" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;">
-            <button class="btn btn-outline-light text-dark" type="button" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;"><span style="color:White;">Search</span></button>
-          </div>
+          <form action="<?php echo base_url();?>index.php/Home/search" method = "post">
+            <div class="form-inline my-2 my-lg-0">
+              <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;">
+              <input id="" name= "yangdicari" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;">
+              <input class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;"><span style="color:White;">Search</span></input>
+            </div>
+          </form>
         </center>
       </div>
       <div class="col-sm-4">
