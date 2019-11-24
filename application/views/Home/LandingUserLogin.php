@@ -65,12 +65,8 @@
               <div class="card-header" style="background-color:white;border:none   width: 100px;
       height: 100px;">
                 <?php 
-<<<<<<< HEAD
-                  echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/ style="width:40px;">';
-=======
                   echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"; style = "      max-width: 100px;
       max-height: 100px;"/>';
->>>>>>> 6448e947227c2796ef9ea0325d5b879581d72de2
                 ?>
               </div>
                 <div class="card-body" style="border:none"><b style="color:#13B1E2"><?php echo $P['Nama_Obat'] ?></b></div>
