@@ -24,7 +24,9 @@
     <div class="container">
       <div class="row" style="margin-top:40px;">
         <div class="col-sm-3">
-          <?= $obat ['Foto_Obat']; ?>
+        <?php 
+              echo '<img src=data:image;base64,'.$obat['foto'].' alt="Icon"/ style="width:200px;">';
+          ?>
         </div>
         <div class="col-sm-9">
           <h3 id="NamaObat" nama="namaobat" style="margin-top:25px;"><?= $obat ['Nama_Obat']; ?></h3>

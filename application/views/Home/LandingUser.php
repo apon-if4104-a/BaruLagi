@@ -80,7 +80,7 @@
           <div class="card" style="width:105%; border:2px solid #13B1E2;">
             <div class="card-header" style="background-color:white;border:none">
               <?php 
-                echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/>';
+                echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/ style="width:40px;">';
               ?>
             </div>
             <div class="card-body" style="border:none"><b style="color:#13B1E2"><?php echo $P['Nama_Obat'] ?></b></div>
